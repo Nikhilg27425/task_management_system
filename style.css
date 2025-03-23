@@ -1,0 +1,145 @@
+:root {
+    --primary: #4CAF50;
+    --secondary: #2196F3;
+    --danger: #f44336;
+    --light: #f5f5f5;
+    --dark: #333;
+    --shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: var(--light);
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: var(--primary);
+    margin: 0;
+}
+
+.task-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.dark-mode .task-form {
+    background: #2d2d2d;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    background: #ddd;
+    border-radius: 4px 4px 0 0;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: var(--primary);
+    color: white;
+}
+
+.task-list {
+    display: grid;
+    gap: 15px;
+}
+
+.task {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    cursor: move;
+    transition: transform 0.2s;
+}
+
+.dark-mode .task {
+    background: #2d2d2d;
+}
+
+.task:hover {
+    transform: translateY(-2px);
+}
+
+.task.missed {
+    border-left: 5px solid var(--danger);
+}
+
+.priority-high { border-left: 5px solid #f44336; }
+.priority-medium { border-left: 5px solid #ff9800; }
+.priority-low { border-left: 5px solid #4CAF50; }
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--primary);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.toggle {
+    padding: 8px 16px;
+    background: var(--secondary);
+}

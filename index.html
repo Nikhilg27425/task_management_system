@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Scheduler & Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Task Scheduler & Manager</h1>
+            <button class="toggle" id="darkModeToggle">Toggle Dark Mode</button>
+        </div>
+
+        <div class="task-form">
+            <div class="form-group">
+                <input type="text" id="taskTitle" placeholder="Task Title" required>
+            </div>
+            <div class="form-group">
+                <textarea id="taskDesc" placeholder="Description" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <select id="taskPriority">
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="datetime-local" id="taskDue" required>
+            </div>
+            <button id="addTask">Add Task</button>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active" data-tab="pending">Pending</div>
+            <div class="tab" data-tab="ongoing">Ongoing</div>
+            <div class="tab" data-tab="completed">Completed</div>
+            <div class="tab" data-tab="missed">Missed</div>
+        </div>
+
+        <div class="spinner" id="spinner"></div>
+        <div class="task-list" id="taskList"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
